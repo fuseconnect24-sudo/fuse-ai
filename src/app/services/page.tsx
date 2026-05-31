@@ -196,187 +196,219 @@ export default function Services() {
       </section>
 
       {/* ════════ SERVICES GRID ════════ */}
-      <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
-            What We Build
-          </p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            End-to-End AI Solutions
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-gray-400">
-            From autonomous agents to data pipelines — everything your business needs
-            to operate with AI-powered digital workers.
-          </p>
-        </div>
+      <section id="solutions" className="relative py-24">
+        {/* Grid background */}
+        <div className="pointer-events-none absolute inset-0 grid-bg opacity-50" />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="glass glass-hover group rounded-2xl p-6 transition-all duration-300"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-2xl">
-                {service.icon}
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
+              What We Build
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              End-to-End AI Solutions
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-gray-400">
+              From autonomous agents to data pipelines — everything your business needs
+              to operate with AI-powered digital workers.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="service-card group rounded-2xl p-6"
+              >
+                <div className="service-icon relative z-10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-2xl transition-all duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="relative z-10 mb-2 text-base font-semibold">{service.title}</h3>
+                <p className="relative z-10 mb-4 text-sm leading-relaxed text-gray-400">
+                  {service.description}
+                </p>
+                <ul className="relative z-10 flex flex-wrap gap-1.5">
+                  {service.features.map((f) => (
+                    <li
+                      key={f}
+                      className="feature-pill rounded-full px-2.5 py-0.5 text-[11px] text-gray-400"
+                    >
+                      {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="mb-2 text-base font-semibold">{service.title}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-gray-400">
-                {service.description}
-              </p>
-              <ul className="flex flex-wrap gap-1.5">
-                {service.features.map((f) => (
-                  <li
-                    key={f}
-                    className="rounded-full bg-white/5 px-2.5 py-0.5 text-[11px] text-gray-400"
-                  >
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ════════ INDUSTRIES ════════ */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
-            Industries
-          </p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-            Industries We Serve
-          </h2>
-        </div>
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0 dot-grid opacity-40" />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind) => (
-            <div
-              key={ind.name}
-              className="glass glass-hover rounded-2xl p-6 transition-all duration-300"
-            >
-              <div className="mb-3 text-2xl">{ind.icon}</div>
-              <h3 className="text-base font-semibold">{ind.name}</h3>
-              <p className="mt-1 text-sm text-red-400/80">⚠ {ind.pain}</p>
-              <p className="mt-1 text-sm text-emerald-400/80">✓ {ind.outcome}</p>
-            </div>
-          ))}
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
+              Industries
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Industries We Serve
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((ind) => (
+              <div
+                key={ind.name}
+                className="industry-card rounded-2xl p-6"
+              >
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500/15 to-purple-500/15 text-xl">
+                  {ind.icon}
+                </div>
+                <h3 className="text-base font-semibold">{ind.name}</h3>
+                <p className="mt-2 text-sm text-gray-500">⚠ {ind.pain}</p>
+                <p className="mt-1 text-sm text-emerald-400/90">→ {ind.outcome}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ════════ HOW WE WORK ════════ */}
-      <section className="mx-auto max-w-4xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
-            Process
-          </p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">How We Work</h2>
-        </div>
+      <section className="relative py-24">
+        <div className="relative mx-auto max-w-4xl px-6">
+          <div className="mb-16 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
+              Process
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">How We Work</h2>
+          </div>
 
-        <div className="relative space-y-8">
-          {/* Vertical line */}
-          <div className="absolute left-[23px] top-2 hidden h-[calc(100%-16px)] w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent sm:block" />
-
-          {processSteps.map((p) => (
-            <div key={p.step} className="flex gap-6">
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-sm font-bold">
-                {p.step}
-              </div>
-              <div className="glass rounded-2xl p-6 flex-1">
-                <h3 className="font-semibold">{p.title}</h3>
-                <p className="mt-1 text-sm text-gray-400">{p.description}</p>
-              </div>
+          <div className="relative space-y-6">
+            {/* Vertical animated line */}
+            <div className="absolute left-[23px] top-2 hidden h-[calc(100%-16px)] w-px sm:block">
+              <div className="h-full w-full bg-gradient-to-b from-blue-500/60 via-purple-500/60 to-transparent animate-gradient" />
             </div>
-          ))}
+
+            {processSteps.map((p, i) => (
+              <div key={p.step} className="flex gap-6 group">
+                <div className="timeline-dot relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-sm font-bold shadow-lg shadow-purple-500/20">
+                  {p.step}
+                </div>
+                <div
+                  className="service-card rounded-2xl p-6 flex-1"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  <h3 className="relative z-10 font-semibold">{p.title}</h3>
+                  <p className="relative z-10 mt-1 text-sm text-gray-400">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ════════ TECH STACK ════════ */}
-      <section className="mx-auto max-w-5xl px-6 py-24 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
-          Technology
-        </p>
-        <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
-          Powered By Enterprise AI Technologies
-        </h2>
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
 
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="glass rounded-full px-5 py-2 text-sm text-gray-300 transition-colors hover:text-white"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="relative mx-auto max-w-5xl px-6 text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-purple-400">
+            Technology
+          </p>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+            Powered By Enterprise AI Technologies
+          </h2>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="industry-card rounded-full px-6 py-2.5 text-sm text-gray-300 transition-all hover:text-white hover:shadow-lg hover:shadow-purple-500/10"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ════════ WHY FUSEAI ════════ */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
-            Impact
-          </p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Why FuseAI</h2>
-        </div>
+      <section className="relative py-24">
+        <div className="relative mx-auto max-w-5xl px-6">
+          <div className="mb-16 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-blue-400">
+              Impact
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Why FuseAI</h2>
+          </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="gradient-border glass rounded-2xl p-6 text-center"
-            >
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                {stat.value}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="service-card rounded-2xl p-6 text-center"
+              >
+                <div className="relative z-10 text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  {stat.value}
+                </div>
+                <div className="relative z-10 mt-2 text-sm text-gray-400">{stat.label}</div>
               </div>
-              <div className="mt-2 text-sm text-gray-400">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {[
-            { icon: "👤", text: "Human-in-the-loop safety on every deployment" },
-            { icon: "🔒", text: "Enterprise-grade security & data privacy" },
-          ].map((item) => (
-            <div
-              key={item.text}
-              className="glass rounded-2xl p-5 flex items-center gap-4"
-            >
-              <span className="text-xl">{item.icon}</span>
-              <span className="text-sm text-gray-300">{item.text}</span>
-            </div>
-          ))}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              { icon: "👤", text: "Human-in-the-loop safety on every deployment" },
+              { icon: "🔒", text: "Enterprise-grade security & data privacy" },
+            ].map((item) => (
+              <div
+                key={item.text}
+                className="industry-card rounded-2xl p-5 flex items-center gap-4"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500/15 to-purple-500/15 text-lg">
+                  {item.icon}
+                </div>
+                <span className="text-sm text-gray-300">{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ════════ FINAL CTA ════════ */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <div className="gradient-border glass rounded-3xl p-12 sm:p-16">
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            Ready to Build Your{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              AI Workforce?
-            </span>
-          </h2>
-          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
-            Whether you need a single automation or an entire AI-powered operating
-            system, FuseAI can help.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/contact"
-              className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-            >
-              Schedule Consultation
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-gray-300 transition-all hover:border-white/40 hover:text-white"
-            >
-              Get Free AI Audit
-            </Link>
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 bottom-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-purple-600/10 blur-[140px]" />
+        </div>
+
+        <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="scan-line service-card rounded-3xl p-12 sm:p-16">
+            <h2 className="relative z-10 text-3xl font-bold sm:text-4xl">
+              Ready to Build Your{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                AI Workforce?
+              </span>
+            </h2>
+            <p className="relative z-10 mt-4 text-gray-400 max-w-xl mx-auto">
+              Whether you need a single automation or an entire AI-powered operating
+              system, FuseAI can help.
+            </p>
+            <div className="relative z-10 mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+              >
+                Schedule Consultation
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-gray-300 transition-all hover:border-white/40 hover:text-white"
+              >
+                Get Free AI Audit
+              </Link>
+            </div>
           </div>
         </div>
       </section>

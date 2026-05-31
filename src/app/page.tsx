@@ -76,61 +76,73 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-blue-400">What We Build</p>
-          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">AI Solutions for Every Business</h2>
-          <p className="mt-4 text-gray-400">
-            From autonomous agents to intelligent workflows — we handle it all
-          </p>
-        </div>
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0 grid-bg opacity-50" />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="glass glass-hover group rounded-2xl p-6 transition-all duration-300"
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-blue-400">What We Build</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">AI Solutions for Every Business</h2>
+            <p className="mt-4 text-gray-400">
+              From autonomous agents to intelligent workflows — we handle it all
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="service-card group rounded-2xl p-6"
+              >
+                <div className="service-icon relative z-10 mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-2xl transition-all duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="relative z-10 mb-2 text-lg font-semibold">{service.title}</h3>
+                <p className="relative z-10 text-sm text-gray-400">{service.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/services"
+              className="text-sm text-gray-400 underline underline-offset-4 transition-colors hover:text-white"
             >
-              <div className="mb-4 text-3xl">{service.icon}</div>
-              <h3 className="mb-2 text-lg font-semibold">{service.title}</h3>
-              <p className="text-sm text-gray-400">{service.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/services"
-            className="text-sm text-gray-400 underline underline-offset-4 transition-colors hover:text-white"
-          >
-            Learn more about our services →
-          </Link>
+              Learn more about our services →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-12 sm:p-16">
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            Ready to Build Your{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">AI Workforce?</span>
-          </h2>
-          <p className="mt-4 text-gray-400">
-            Whether you need a single automation or an entire AI-powered operating system, FuseAI can help.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              href="/contact"
-              className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-            >
-              Get Started Today
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-gray-300 transition-all hover:border-white/40 hover:text-white"
-            >
-              Book a Free Call
-            </Link>
+      <section className="relative py-24">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 bottom-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/10 blur-[120px]" />
+        </div>
+
+        <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="scan-line service-card rounded-3xl p-12 sm:p-16">
+            <h2 className="relative z-10 text-3xl font-bold sm:text-4xl">
+              Ready to Build Your{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">AI Workforce?</span>
+            </h2>
+            <p className="relative z-10 mt-4 text-gray-400">
+              Whether you need a single automation or an entire AI-powered operating system, FuseAI can help.
+            </p>
+            <div className="relative z-10 mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-3 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+              >
+                Get Started Today
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-full border border-white/20 px-8 py-3 text-sm font-medium text-gray-300 transition-all hover:border-white/40 hover:text-white"
+              >
+                Book a Free Call
+              </Link>
+            </div>
           </div>
         </div>
       </section>
