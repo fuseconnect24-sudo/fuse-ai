@@ -11,8 +11,7 @@ export default function Footer() {
               Fuse AI
             </span>
             <p className="text-sm text-gray-400">
-              Intelligent automation solutions powered by AI. We help businesses
-              scale with custom AI agents and workflows.
+              Building AI employees, agents, and automations that run businesses.
             </p>
           </div>
 
@@ -31,12 +30,12 @@ export default function Footer() {
           <div>
             <h4 className="mb-3 text-sm font-semibold text-white">Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Script & Name Mapping</li>
-              <li>DB Sync Agents</li>
-              <li>PDF Doc Parsers</li>
-              <li>Network API Bridges</li>
-              <li>Private Cloud AI</li>
-              <li>Agentic Operations</li>
+              <li>AI Agents & Digital Employees</li>
+              <li>Workflow Automation</li>
+              <li>Document Intelligence</li>
+              <li>Customer Support Automation</li>
+              <li>Lead Generation Systems</li>
+              <li>Custom AI Solutions</li>
             </ul>
           </div>
 
